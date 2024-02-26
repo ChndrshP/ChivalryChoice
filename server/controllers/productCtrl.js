@@ -6,7 +6,7 @@ import Product from "../model/Product.js";
 // @access Private/Admin
 
 export const createProductCtrl = asyncHandler(async(req, res)=>{
-    const {name, description, category, sizes, colors, user, price, totalQty} = req.body;
+    const {name, description, category, sizes, colors, user, price, totalQty, brand} = req.body;
     //Product Exists
     const productExists = await Product.findOne({name});
     if(productExists){
@@ -19,9 +19,10 @@ export const createProductCtrl = asyncHandler(async(req, res)=>{
         category,
         sizes,
         colors,
-        user: req.userAuthID,
+        user: req.userAuthId,
         price,
         totalQty,
+        brand,
     });
     //push the product into the category
 

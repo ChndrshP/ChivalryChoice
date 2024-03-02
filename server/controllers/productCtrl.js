@@ -93,6 +93,16 @@ export const getProductCtrl = asyncHandler(async(req, res) =>{
     }
 
 
+    //filter by price
+    if(req.query.price){
+        const priceRange = req.query.price.split("-");
+        //gte: greater than or equal to
+        //lte: less than or equal to
+        productQuery = productQuery.find({
+            price: {$gte: priceRange[0], $lte: priceRange[1]}
+        }); 
+    }
+
     //await the query
     const products = productQuery;
 

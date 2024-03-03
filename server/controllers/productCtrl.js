@@ -103,8 +103,22 @@ export const getProductCtrl = asyncHandler(async(req, res) =>{
         }); 
     }
 
+    //pagination
+    //page
+    const page = parseInt(req.query.page) ? parseInt(req.query.page) :1;
+    //limit
+    const limit = parseInt(req.query.limit) ? parseInt(req.query.limit) :1;    
+    //startIdx
+    const startIndex = (page - 1)*limit;
+    //endIdx
+    const endIdx = page * limit;
+    //Total
+    const total = await productQuery;
+    
+    
+    productQuery = productQuery.skip(startIndex).limit(limit);
     //await the query
-    const products = productQuery;
+    const products = await productQuery;
 
     res.json({
         status: "success",

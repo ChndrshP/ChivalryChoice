@@ -139,5 +139,42 @@ export const getSingleProduct = asyncHandler(async ( req, res) =>{
         status: "success",
         message: "Product fetched successfully",
         product,
-    })
-})
+    });
+});
+
+
+export const UpdateProductCtrl = asyncHandler(async ( req, res) =>{
+
+    const{
+        name,
+        description,
+        category,
+        sizes,
+        colors,
+        user,
+        price,
+        totalQty,
+        brand,
+    } = req.body
+
+    //update
+    const product = await Product.findByIdAndUpdate(req.params.id, {
+        name,
+        description,
+        category,
+        sizes,
+        colors,
+        user,
+        price,
+        totalQty,
+        brand,
+    },{
+        new: true
+        }
+    );
+    res.json({
+        status: "success",
+        message: "Product updated successfully",
+        product,
+    });
+});

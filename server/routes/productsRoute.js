@@ -4,6 +4,7 @@ import {
     getProductCtrl,
     getSingleProduct,
     UpdateProductCtrl,
+    deleteProductCtrl,
 } from '../controllers/productCtrl.js';
 import {isLoggedIn} from '../middlewares/isLoggedIn.js';
 
@@ -13,5 +14,6 @@ productsRouter.post('/',isLoggedIn,createProductCtrl);
 productsRouter.get('/',getProductCtrl);
 productsRouter.get('/:id',getProductCtrl);
 productsRouter.put('/:id',isLoggedIn, getProductCtrl);
+productsRouter.delete('/:id/delete',isLoggedIn, deleteProductCtrl);
 
 export default productsRouter;

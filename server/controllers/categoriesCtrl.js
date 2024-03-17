@@ -24,3 +24,33 @@ export const createCategoryCtrl = asyncHandler(async(req, res)=>{
         category,
     });
 });
+
+
+//@desc Create new category
+//@route POST /api/categories
+//@access Public
+
+export const getAllCategoriesCtrl = asyncHandler(async(req, res)=>{
+    const categories = await Category.find(); 
+
+    res.json({
+        status: "success",
+        message: "Categories fetched successfully",
+        category,
+    });
+});
+ 
+
+//@desc Create new category
+//@route POST /api/categories
+//@access Public
+
+export const getSingleCategoryCtrl = asyncHandler(async(req, res)=>{
+    const category = await Category.find(req.params); 
+
+    res.json({
+        status: "success",
+        message: "Category fetched successfully",
+        category,
+    });
+});

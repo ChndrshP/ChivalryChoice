@@ -38,7 +38,7 @@ export const createProductCtrl = asyncHandler(async(req, res)=>{
 // @route GET /api/products
 //@access Public
 
-export const getProductCtrl = asyncHandler(async(req, res) =>{
+export const getProductsCtrl = asyncHandler(async(req, res) =>{
     //query
     let productQuery = Product.find();
 
@@ -154,7 +154,8 @@ export const getProductCtrl = asyncHandler(async(req, res) =>{
 // @route GET /api/products/: id
 // @access Public
 
-export const getSingleProduct = asyncHandler(async ( req, res) =>{
+export const getProductCtrl = asyncHandler(async ( req, res) =>{
+    
     const product = await Product.findById(req.params.id);
     if(!product){
         throw new Error("Product not found");

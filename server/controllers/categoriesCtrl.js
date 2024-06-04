@@ -36,7 +36,7 @@ export const getAllCategoriesCtrl = asyncHandler(async(req, res)=>{
     res.json({
         status: "success",
         message: "Categories fetched successfully",
-        category,
+        categories,
     });
 });
  
@@ -46,7 +46,7 @@ export const getAllCategoriesCtrl = asyncHandler(async(req, res)=>{
 //@access Public
 
 export const getSingleCategoryCtrl = asyncHandler(async(req, res)=>{
-    const category = await Category.find(req.params); 
+    const category = await Category.findById(req.params.id); 
 
     res.json({
         status: "success",
@@ -63,9 +63,12 @@ export const getSingleCategoryCtrl = asyncHandler(async(req, res)=>{
 export const updateCategoryCtrl = asyncHandler(async(req, res) => {
     const {name} = req.body;
 
-    const product = await Product.findByIdAndUpdate(req.params.id, {
+    const category = await Category.findByIdAndUpdate(
+        req.params.id, 
+        {
         name,
-    },{
+        },
+        {
         new: true
         }
     );

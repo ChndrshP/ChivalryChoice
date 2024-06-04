@@ -13,7 +13,7 @@ const categorySchema = new Schema({
     },
     image: {
         type: String,
-        default: "",
+        default: "https://res.cloudinary.com/djz3p8sye/image/upload/v1628580134/ecommerce/placeholder.png",
         required: true,
     },
     products:[

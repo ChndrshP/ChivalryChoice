@@ -7,6 +7,7 @@ import { globalErrhandler, notFound} from '../middlewares/globalErrHandler.js';
 import productsRouter from '../routes/productsRoute.js';
 import categoriesRouter from '../routes/categoriesRouter.js';
 import brandsRouter from '../routes/brandsRouter.js';
+import colorsRouter from '../routes/colorsRouter.js';
 
 
 //dbConnect
@@ -20,6 +21,7 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/products", productsRouter);
 app.use("/api/v1/categories", categoriesRouter);
 app.use("/api/v1/brands", brandsRouter);
+app.use("/api/v1/colors", colorsRouter);
 
 //err middleware
 app.use(notFound);

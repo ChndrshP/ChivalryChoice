@@ -32,13 +32,17 @@ const OrderSchema = new Schema({
     },
     paymentMethod:{
         type: String,
-        required: true,
         default: "Not specified",
+    },
+    totalPrice: {
+        type: Number,
+        required: true,
     },
     currency:{
         type: String,
         default: "Not Specified",
     },
+    
     //For Admin
     status:{
         type: String,

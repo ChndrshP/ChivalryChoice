@@ -6,7 +6,15 @@ import Order from "../model/Order.js";
 // @access Private
 
 export const createOrderCtrl = asyncHandler(async (req, res) => {
-    res.json({
-        msg: "Create order route",
-    });
+    //Find the user
+
+    //Get the payload(customer, orderItems, shippingAddress, totalPrice)
+
+    //Check if orderItems is not empty
+
+    //Create the order - Save it to DB
+
+    //Update the product stock
+
+    //make pamyment (stripe)
 });

@@ -60,7 +60,7 @@ const ProductSchema = new Schema(
             required: true,
         },
 
-        totalSOld: {
+        totalSold: {
             type: Number,
             required: true,
             default: 0,

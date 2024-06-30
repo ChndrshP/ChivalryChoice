@@ -28,10 +28,6 @@ export const createOrderCtrl = asyncHandler(async (req, res) => {
         totalPrice,
     });
 
-    //push order into user
-    user?.orders.push(order?._id);
-    await user?.save();
-
     //Update the product stock
     const products = await Product.find({_id: {$in: orderItems}});
 
@@ -44,9 +40,20 @@ export const createOrderCtrl = asyncHandler(async (req, res) => {
         }
         await product?.save();
     });
+
+    //push order into user
+    user?.orders.push(order?._id);
+    await user?.save();
+
     //make pamyment (stripe)
 
     //Payment webhook
 
     //Update the user order 
+    res.json({
+        success: true,
+        message: "Order created successfully",
+        order,
+        user,
+    })
 });

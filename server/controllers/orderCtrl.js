@@ -33,7 +33,7 @@ export const createOrderCtrl = asyncHandler(async (req, res) => {
 
     orderItems?.map(async(order) => {
         const product = products?.find((product) => {
-            return product?._id === order?._id.toString();
+            return product?._id.toString() === order?._id.toString();
         });
         if(product){
             product.totalSold += order.qty;

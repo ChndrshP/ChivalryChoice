@@ -75,7 +75,7 @@ const ProductSchema = new Schema(
 //Virtuals
 
 //qty left
-ProductSchema.virtual('qtyLeft').get(function(){
+ProductSchema.virtual("qtyLeft").get(function(){
     const product = this;
     return product.totalQty - product.totalSold;
 });

@@ -1,4 +1,6 @@
 import asyncHandler from "express-async-handler";
+import dotenv from "dotenv";
+dotenv.config();
 import Stripe from "stripe"; 
 import Order from "../model/Order.js";
 import User from "../model/User.js";
@@ -56,7 +58,7 @@ export const createOrderCtrl = asyncHandler(async (req, res) => {
     //make pamyment (stripe)
     const session = await stripe.checkout.sessions.create({
         line_items :[{
-            pricee_data:{
+            price_data:{
                 currency:"usd",
                 product_data:{
                     name:'Hats',

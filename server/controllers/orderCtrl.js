@@ -69,7 +69,7 @@ export const createOrderCtrl = asyncHandler(async (req, res) => {
         ],
         mode:"payment",
         success_url:'http://localhost:3000/success',
-        cancel_url:'http://localhost:3000/success/cancel'
+        cancel_url:'http://localhost:3000/cancel'
     });
     res.send({url: session.url});
     //Payment webhook

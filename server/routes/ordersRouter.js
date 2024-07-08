@@ -8,6 +8,6 @@ import { isLoggedIn } from '../middlewares/isLoggedIn.js';
 const orderRouter = express.Router();
 
 orderRouter.post('/', isLoggedIn, createOrderCtrl);
-orderRouter.post('/', isLoggedIn, getAllorderCtrl);
+orderRouter.get('/', isLoggedIn, getAllorderCtrl);
 
 export default orderRouter;

@@ -85,7 +85,11 @@ export const createOrderCtrl = asyncHandler(async (req, res) => {
 // @access Private
 
 export const getAllorderCtrl = asyncHandler(async(req,res) => {
+    //find all orders
+    const orders = await Order.find();
     res.json({
-        msg:"welcome orders ctrl",
+        success: true,
+        message: "All orders",
+        orders,
     });
 });

@@ -79,3 +79,13 @@ export const createOrderCtrl = asyncHandler(async (req, res) => {
     });
     res.send({url: session.url});
 });
+
+// @desc get all orders
+// @route GET /api/v1/orders
+// @access Private
+
+export const getAllorderCtrl = asyncHandler(async(req,res) => {
+    res.json({
+        msg:"welcome orders ctrl",
+    });
+});

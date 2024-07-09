@@ -93,3 +93,38 @@ export const getAllorderCtrl = asyncHandler(async(req,res) => {
         orders,
     });
 });
+
+// @desc get single orders
+// @route GET /api/v1/orders
+// @access Private
+
+export const getSingleorderCtrl = asyncHandler(async(req,res) => {
+    //get th id from params
+    const id = req.params.id;
+    const order = await Order.findById(id);
+    res.json({
+        success: true,
+        message: "Single orders",
+        order,
+    });
+});
+
+// @desc update order to delivered
+// @route GET /api/v1/orders/update/:id
+// @access Private/admin
+
+export const updateOrderCtrl = asyncHandler(async(req,res) => {
+    const id = req.params.id;
+
+    const updateOrder = await Order.findByIdAndUpdate(id,{
+        status: req.body.status,
+    },{
+        new: true,
+    });
+    res.status(200).json({
+        success: true,
+        message: "Order Update",
+        updateOrder,
+    });
+});
+

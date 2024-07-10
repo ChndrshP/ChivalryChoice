@@ -11,7 +11,7 @@ const CouponSchema = new Schema({
         type: Date,
         required: true,
     },
-    expireAt: {
+    endDate: {
         type: Date,
         required: true,
     },    discount: {

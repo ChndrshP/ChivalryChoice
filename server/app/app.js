@@ -11,7 +11,9 @@ import brandsRouter from '../routes/brandsRouter.js';
 import colorsRouter from '../routes/colorsRouter.js';
 import reviewRouter from '../routes/reviewRouter.js';
 import orderRouter from '../routes/ordersRouter.js';
+import couponRouter from '../routes/couponRouter.js';
 import Order from '../model/Order.js';
+
 
 
 //dbConnect
@@ -86,6 +88,7 @@ app.use("/api/v1/brands/", brandsRouter);
 app.use("/api/v1/colors/", colorsRouter);
 app.use("/api/v1/reviews/", reviewRouter);
 app.use("/api/v1/orders/", orderRouter);
+app.use("/api/v1/coupons/", couponRouter);
 
 //err middleware
 app.use(notFound);

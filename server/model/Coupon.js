@@ -40,6 +40,11 @@ CouponSchema.virtual('isExpired').get(function(){
     return Date.now() > this.endDate;
 });
 
+CouponSchema.virtual('daysLeft').get(function(){
+    const daysLeft = Math.ceil((this.endDate - Date.now()) / (1000 * 60 * 60 * 24) + 'Days Left');
+    return daysLeft;
+});
+ 
 //valid coupon
 CouponSchema.pre('validate', function(next){
     if(this.endDate < this.startDate){

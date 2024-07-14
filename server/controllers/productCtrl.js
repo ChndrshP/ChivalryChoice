@@ -8,70 +8,71 @@ import Brand from "../model/Brand.js";
 // @access Private/Admin
 
 export const createProductCtrl = asyncHandler(async(req, res)=>{
-    const {name, 
-           description,
-           category,
-           sizes,
-           colors,
-           price,
-           totalQty,
-           brand
-        } = req.body;
-    //Product Exists
-    const productExists = await Product.findOne({name});
-    if(productExists){
-        throw new Error("Product Already Exists");
-    }
+    console.log(req.file);
+    // const {name, 
+    //        description,
+    //        category,
+    //        sizes,
+    //        colors,
+    //        price,
+    //        totalQty,
+    //        brand
+    //     } = req.body;
+    // //Product Exists
+    // const productExists = await Product.findOne({name});
+    // if(productExists){
+    //     throw new Error("Product Already Exists");
+    // }
 
-    //Find the category
-    const categoryFound = await Category.findOne({
-        name: category, 
-    });
-    if(!categoryFound){
-        throw new Error(
-            'Category not found, please check the category name and try again.'
-        );
-    }
+    // //Find the category
+    // const categoryFound = await Category.findOne({
+    //     name: category, 
+    // });
+    // if(!categoryFound){
+    //     throw new Error(
+    //         'Category not found, please check the category name and try again.'
+    //     );
+    // }
 
-    //Find the brand
-    const brandFound = await Brand.findOne({
-        name: brand.toLowerCase(), 
-    });
-    if(!brandFound){
-        throw new Error(
-            'Brand not found, please check the category name and try again.'
-        );
-    }
+    // //Find the brand
+    // const brandFound = await Brand.findOne({
+    //     name: brand.toLowerCase(), 
+    // });  
+    // if(!brandFound){
+    //     throw new Error(
+    //         'Brand not found, please check the category name and try again.'
+    //     );
+    // }
 
-    //Create the product
-    const product = await Product.create({
-        name,
-        description,
-        category,
-        sizes,
-        colors,
-        user: req.userAuthId,
-        price,
-        totalQty,
-        brand,
-    });
+    // //Create the product
+    // const product = await Product.create({
+    //     name,
+    //     description,
+    //     category,
+    //     sizes,
+    //     colors,
+    //     user: req.userAuthId,
+    //     price,
+    //     totalQty,
+    //     brand,
+    // });
 
-    //push the product into the category
-    categoryFound.products.push(product._id);
-    //resave
-    await categoryFound.save();
+    // //push the product into the category
+    // categoryFound.products.push(product._id);
+    // //resave
+    // await categoryFound.save();
 
-    //push the product into the brand
-    brandFound.products.push(product._id);
-    //resave
-    await brandFound.save();
+    // //push the product into the brand
+    // brandFound.products.push(product._id);
+    // //resave
+    // await brandFound.save();
 
-    //send response
-    res.json({
-        status: "success",
-        message: "Product created successfully",
-        product,
-    });
+    // //send response
+    // res.json({
+    //     status: "success",
+    //     message: "Product created successfully",
+    //     product,
+    // });
 });
 
 // @desc Get all products

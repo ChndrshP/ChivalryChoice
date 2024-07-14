@@ -54,7 +54,6 @@ export const createOrderCtrl = asyncHandler(async (req, res) => {
         shippingAddress,
         totalPrice: couponFound ? totalPrice - (totalPrice * discount) : totalPrice,
     });
-    console.log(order);
 
     //Update the product qty
     const products = await Product.find({_id: {$in: orderItems}});

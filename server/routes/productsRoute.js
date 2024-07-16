@@ -11,7 +11,7 @@ import {isLoggedIn} from '../middlewares/isLoggedIn.js';
 
 const productsRouter = express.Router();
 
-productsRouter.post('/',isLoggedIn,upload,createProductCtrl);
+productsRouter.post('/',isLoggedIn,upload.single('file'),createProductCtrl);
 productsRouter.get('/',getProductsCtrl);
 productsRouter.get('/:id',getProductCtrl);
 productsRouter.put('/:id',isLoggedIn, UpdateProductCtrl);

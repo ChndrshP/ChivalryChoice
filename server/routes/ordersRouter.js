@@ -3,7 +3,7 @@ import { createOrderCtrl,
          getAllorderCtrl,
          getSingleorderCtrl,
          updateOrderCtrl,
-         getSalesSumCtrl
+         getOrderStatsCtrl
         } from '../controllers/orderCtrl.js';
 import { isLoggedIn } from '../middlewares/isLoggedIn.js';
 
@@ -13,6 +13,6 @@ orderRouter.post('/', isLoggedIn, createOrderCtrl);
 orderRouter.get('/', isLoggedIn, getAllorderCtrl);
 orderRouter.put('/update/:id', isLoggedIn, updateOrderCtrl);
 orderRouter.get('/:id', isLoggedIn, getSingleorderCtrl);
-orderRouter.get('/sales/sum', isLoggedIn, getSalesSumCtrl);
+orderRouter.get('/sales/stats', isLoggedIn, getOrderStatsCtrl);
         
 export default orderRouter;

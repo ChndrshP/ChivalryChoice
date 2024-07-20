@@ -32,3 +32,15 @@ export const loginUserAction = createAsyncThunk(
         }
     }
 );
+
+//user slice
+const userSlice = createSlice({
+    name: "users",
+    initialState,
+    extraReducers: (builder)=>{
+        //action handler
+        //login
+        builder.addCase()
+    }
+    
+});

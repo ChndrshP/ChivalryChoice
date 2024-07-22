@@ -50,7 +50,7 @@ const userSlice = createSlice({
         builder.addCase(loginUserAction.rejected, (state, action)=>{
             state.userAuth.userInfo = action.payload;
             state.userAuth.loading = false;
-        });
+        });//newlinw
     },
 });
 

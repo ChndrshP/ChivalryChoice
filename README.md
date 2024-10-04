@@ -8,7 +8,6 @@ ChivalryChoice is an elegant e-commerce website developed using the MERN stack (
 - **Product Catalog**: Browse through a wide range of products conveniently categorized for easy navigation.
 - **Shopping Cart**: Add products to your cart and manage your purchases effortlessly.
 - **Checkout Process**: Smooth checkout process for hassle-free transactions.
-- **Order Tracking**: Track the status of your orders and get updates on delivery.
 - **Admin Panel**: Admin dashboard to manage products, orders, and user accounts efficiently.
 - **Responsive Design**: The website is designed to be responsive, ensuring optimal viewing experience across devices.
 
@@ -16,7 +15,6 @@ ChivalryChoice is an elegant e-commerce website developed using the MERN stack (
 
 - **Frontend**:
   - React.js
-  - Redux (optional for state management)
   - HTML
   - CSS
   - JavaScript
@@ -24,13 +22,8 @@ ChivalryChoice is an elegant e-commerce website developed using the MERN stack (
 - **Backend**:
   - Node.js
   - Express.js
-  - MongoDB (with Mongoose ORM)
+  - MongoDB
   - JSON Web Tokens (JWT) for authentication
-
-- **Additional Libraries**:
-  - Axios (for making HTTP requests)
-  - React Router (for client-side routing)
-  - Material-UI or Bootstrap (for UI components)
 
 ## Installation
 

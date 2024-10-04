@@ -5,8 +5,8 @@ import { loginUserAction } from "../redux/slices/users/userSlice";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: "admin@gmail.com",
+    password: "abcd1234",
   });
 
   const [errors, setErrors] = useState({});
